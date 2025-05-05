@@ -60,7 +60,10 @@ label {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"],
+select,
+textarea {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #d1d1d1;
@@ -70,10 +73,17 @@ input[type="password"] {
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
     border-color: #0078d4;
     box-shadow: 0 0 5px rgba(0, 120, 212, 0.3);
     outline: none;
+}
+
+textarea {
+    resize: vertical;
 }
 
 button {
@@ -185,7 +195,10 @@ button:hover {
 
 @media (max-width: 360px) {
     input[type="text"],
-    input[type="password"] {
+    input[type="password"],
+    input[type="email"],
+    select,
+    textarea {
         font-size: 0.9rem;
     }
 

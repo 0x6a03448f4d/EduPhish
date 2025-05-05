@@ -1,9 +1,10 @@
 EduPhish - Simulação Educacional de Phishing
-Este projeto simula um ataque de phishing para fins educacionais, ensinando sobre segurança online. Não use para fins maliciosos.
+Este projeto simula um ataque de phishing para fins educacionais, permitindo que empresas testem a conscientização de seus funcionários sobre segurança online. Não use para fins maliciosos.
 Pré-requisitos
 
 Python 3.6+
 Navegador web (Chrome, Firefox, etc.)
+Conta Outlook (opcional, para envio de e-mails reais)
 
 Configuração
 
@@ -26,16 +27,28 @@ Execute o servidor:python phishing_mvp.py
 Uso
 
 Acesse http://127.0.0.1:5000/ para a página inicial.
-Clique em "Gerar E-mail Simulado" ou acesse http://127.0.0.1:5000/send_email?email=teste@exemplo.com para criar um link.
-O link gerado é salvo em simulated_emails.txt. Clique para testar a página de login.
-Preencha o formulário de login (use dados fictícios).
+Clique em "Configurar Campanha" para inserir e-mails dos funcionários e escolher o método de envio (simulação ou e-mail real).
+Para envio real, forneça credenciais de uma conta Outlook.
+Clique nos links gerados para testar a página de login (use dados fictícios).
 Acesse http://127.0.0.1:5000/admin (usuário: admin, senha: admin123) para ver o dashboard.
+Para visualizar dados no terminal, execute:python view_db.py
+
+
+
+Configurando uma Conta Outlook para Envio Real
+
+Crie uma conta em https://outlook.live.com/.
+Acesse https://account.live.com/security e ative a verificação em duas etapas (se necessário).
+Gere uma senha de aplicativo em https://account.live.com/security (se a autenticação padrão falhar).
+Use o e-mail e a senha de aplicativo no formulário de campanha.
 
 Estrutura
 
 phishing_mvp.py: Servidor Flask.
+view_db.py: Script para visualizar dados no terminal.
+config.py: Configurações SMTP (para e-mails reais).
 static/style.css: Estilos realistas inspirados no Office 365.
-templates/: Páginas HTML (index.html, login.html, result.html, admin.html, admin_login.html).
+templates/: Páginas HTML (index.html, campaign.html, login.html, result.html, admin.html, admin_login.html, email.html).
 database.db: Banco de dados SQLite para cliques e logins.
 simulated_emails.txt: Links de e-mails simulados.
 
@@ -43,7 +56,9 @@ Solução de Problemas
 
 Erro no banco de dados: Exclua database.db e reinicie o servidor.
 Erro 404 style.css: Confirme que static/style.css existe.
-E-mails reais: Configure config.py com credenciais Outlook (opcional).
+Erro no envio de e-mails: Verifique as credenciais Outlook e autorize logins em https://account.live.com/security.
+Erro TemplateNotFound: Confirme que templates/campaign.html e templates/email.html existem.
+Dashboard vazio: Execute python view_db.py para verificar os dados.
 
 Notas Éticas
-Este é um projeto educacional. Use apenas para aprendizado e com consentimento dos usuários testados.
+Este é um projeto educacional. Obtenha consentimento dos funcionários antes de realizar testes. Informe que se trata de uma simulação educacional.

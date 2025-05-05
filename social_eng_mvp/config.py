@@ -1,4 +1,4 @@
-SMTP_SERVER = "smtp.gmail.com"
+SMTP_SERVER = "smtp-mail.outlook.com"  # Servidor SMTP do Outlook
 SMTP_PORT = 587
-SMTP_USER = "asoel@iscte-iul.pt"  # Substitua pelo seu e-mail
-SMTP_PASSWORD = "ohug ypvp mbej uhlo"  # Substitua pela sua senha ou App Password
+SMTP_USER = None  # Substitua pelo seu e-mail
+SMTP_PASSWORD = None # Substitua pela sua senha ou App Password

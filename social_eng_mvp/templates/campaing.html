@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPhish - Configurar Campanha</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://logincdn.msauth.net/shared/1.0/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90fa.svg" alt="Microsoft Logo">
+        </div>
+        <h2>Configurar Campanha de Teste</h2>
+        <p>Insira os e-mails dos funcionários a testar (um por linha) e escolha o método de envio. Para envio real, use uma conta Outlook válida.</p>
+        <p style="color: #d83b01; font-weight: bold;">Nota: Obtenha consentimento dos funcionários antes de testar.</p>
+        <form method="POST" action="/start_campaign">
+            <div class="form-group">
+                <label for="emails">E-mails (um por linha)</label>
+                <textarea id="emails" name="emails" rows="5" required placeholder="funcionario1@empresa.com
+funcionario2@empresa.com"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="method">Método de Envio</label>
+                <select id="method" name="method" required>
+                    <option value="simulate">Simulação (salva em simulated_emails.txt)</option>
+                    <option value="smtp">E-mail Real (Outlook)</option>
+                </select>
+            </div>
+            <div class="form-group smtp-fields" style="display: none;">
+                <label for="smtp_user">E-mail do Remetente (Outlook)</label>
+                <input type="email" id="smtp_user" name="smtp_user" placeholder="seu-email@outlook.com">
+            </div>
+            <div class="form-group smtp-fields" style="display: none;">
+                <label for="smtp_password">Senha do E-mail</label>
+                <input type="password" id="smtp_password" name="smtp_password" placeholder="Sua senha">
+            </div>
+            <button type="submit">Iniciar Campanha</button>
+        </form>
+        <div class="footer">
+            <p>Projeto educacional. Obtenha consentimento dos funcionários antes de testar.</p>
+            <p><a href="/">Voltar à página inicial</a></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('method').addEventListener('change', function() {
+            const smtpFields = document.querySelectorAll('.smtp-fields');
+            if (this.value === 'smtp') {
+                smtpFields.forEach(field => field.style.display = 'block');
+                document.getElementById('smtp_user').required = true;
+                document.getElementById('smtp_password').required = true;
+            } else {
+                smtpFields.forEach(field => field.style.display = 'none');
+                document.getElementById('smtp_user').required = false;
+                document.getElementById('smtp_password').required = false;
+            }
+        });
+        document.querySelector('form').addEventListener('submit', function(e) {
+            if (!confirm('Você confirma que obteve consentimento dos funcionários para este teste?')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://logincdn.msauth.net/shared/1.0/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90fa.svg" alt="Microsoft Logo">
+        </div>
+        <h2>Dashboard do Administrador</h2>
+        <h3>Cliques Registrados</h3>
+        {% if clicks %}
+        <table class="table">
+            <tr>
+                <th>User ID</th>
+                <th>IP</th>
+                <th>Navegador</th>
+                <th>Data/Hora</th>
+            </tr>
+            {% for click in clicks %}
+            <tr>
+                <td>{{ click[0] }}</td>
+                <td>{{ click[1] }}</td>
+                <td>{{ click[2] }}</td>
+                <td>{{ click[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p class="result-message">Nenhum clique registrado. Gere um e-mail simulado e clique no link.</p>
+        {% endif %}
+        <h3>Tentativas de Login</h3>
+        {% if logins %}
+        <table class="table">
+            <tr>
+                <th>User ID</th>
+                <th>Usuário</th>
+                <th>Senha</th>
+                <th>IP</th>
+                <th>Data/Hora</th>
+            </tr>
+            {% for login in logins %}
+            <tr>
+                <td>{{ login[0] }}</td>
+                <td>{{ login[1] }}</td>
+                <td>{{ login[2] }}</td>
+                <td>{{ login[3] }}</td>
+                <td>{{ login[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p class="result-message">Nenhuma tentativa de login registrada. Preencha o formulário de login.</p>
+        {% endif %}
+        <h3>IPs Mais Frequentes</h3>
+        {% if ip_counts %}
+        <table class="table">
+            <tr>
+                <th>IP</th>
+                <th>Contagem</th>
+            </tr>
+            {% for ip, count in ip_counts %}
+            <tr>
+                <td>{{ ip }}</td>
+                <td>{{ count }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p class="result-message">Nenhum IP registrado.</p>
+        {% endif %}
+        <div class="footer">
+            <p>Projeto educacional. Uso restrito para fins de aprendizado.</p>
+            <p><a href="/">Voltar à página inicial</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+Para: teste@exemplo.com
+Assunto: Atualize sua conta agora!
+Link: http://127.0.0.1:5000/login?user_id=4404b235-3bcc-441e-83c3-f042b444ecbe
+Conte�do:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atualize sua conta</title>
+</head>
+<body>
+    <h2>Atualização de Conta Necessária</h2>
+    <p>Por favor, atualize suas credenciais do Office 365 clicando no link abaixo:</p>
+    <p><a href="http://127.0.0.1:5000/login?user_id=4404b235-3bcc-441e-83c3-f042b444ecbe">Atualizar Agora</a></p>
+    <p>Se você não solicitou esta ação, ignore este e-mail.</p>
+</body>
+</html>
+---
+Para: teste2@exemplo.com
+Assunto: Atualize sua conta agora!
+Link: http://127.0.0.1:5000/login?user_id=f8c22002-0a49-48ed-98aa-88501d14ff0d
+Conte�do:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atualize sua conta</title>
+</head>
+<body>
+    <h2>Atualização de Conta Necessária</h2>
+    <p>Por favor, atualize suas credenciais do Office 365 clicando no link abaixo:</p>
+    <p><a href="http://127.0.0.1:5000/login?user_id=f8c22002-0a49-48ed-98aa-88501d14ff0d">Atualizar Agora</a></p>
+    <p>Se você não solicitou esta ação, ignore este e-mail.</p>
+</body>
+</html>
+---
+Para: teste@exemplo.com
+Assunto: Atualize sua conta agora!
+Link: http://127.0.0.1:5000/login?user_id=d508174a-3384-42e1-bb87-69da0bb3ef15
+Conte�do:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atualize sua conta</title>
+</head>
+<body>
+    <h2>Atualização de Conta Necessária</h2>
+    <p>Por favor, atualize suas credenciais do Office 365 clicando no link abaixo:</p>
+    <p><a href="http://127.0.0.1:5000/login?user_id=d508174a-3384-42e1-bb87-69da0bb3ef15">Atualizar Agora</a></p>
+    <p>Se você não solicitou esta ação, ignore este e-mail.</p>
+</body>
+</html>
+---
+Para: teste@exemplo.com
+Assunto: Atualize sua conta agora!
+Link: http://127.0.0.1:5000/login?user_id=52cc7a64-377f-43d2-9949-0c353eaacc2b
+Conte�do:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atualize sua conta</title>
+</head>
+<body>
+    <h2>Atualização de Conta Necessária</h2>
+    <p>Por favor, atualize suas credenciais do Office 365 clicando no link abaixo:</p>
+    <p><a href="http://127.0.0.1:5000/login?user_id=52cc7a64-377f-43d2-9949-0c353eaacc2b">Atualizar Agora</a></p>
+    <p>Se você não solicitou esta ação, ignore este e-mail.</p>
+</body>
+</html>
+---

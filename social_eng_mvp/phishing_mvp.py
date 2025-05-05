@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
 import sqlite3
 import os
 import uuid
@@ -34,6 +34,10 @@ def index():
 def campaign():
     return render_template('campaign.html')
 
+@app.route('/campaing')
+def campaign_redirect():
+    return redirect(url_for('campaign'))
+
 @app.route('/start_campaign', methods=['POST'])
 def start_campaign():
     emails = request.form.get('emails').splitlines()
@@ -54,8 +58,12 @@ def start_campaign():
         user_id = str(uuid.uuid4())
         link = f"http://127.0.0.1:5000/login?user_id={user_id}"
         
-        with open('templates/email.html', 'r') as f:
-            email_content = f.read().replace('{{link}}', link)
+        try:
+            with open('templates/email.html', 'r') as f:
+                email_content = f.read().replace('{{link}}', link)
+        except FileNotFoundError:
+            results.append("Erro: Arquivo email.html não encontrado")
+            continue
         
         if method == 'simulate':
             try:
@@ -113,8 +121,11 @@ def send_email():
     user_id = str(uuid.uuid4())
     link = f"http://127.0.0.1:5000/login?user_id={user_id}"
     
-    with open('templates/email.html', 'r') as f:
-        email_content = f.read().replace('{{link}}', link)
+    try:
+        with open('templates/email.html', 'r') as f:
+            email_content = f.read().replace('{{link}}', link)
+    except FileNotFoundError:
+        return "Erro: Arquivo email.html não encontrado", 500
     
     try:
         with open('simulated_emails.txt', 'a') as f:
@@ -136,7 +147,7 @@ def send_email():
         """
     except Exception as e:
         print(f"Erro ao simular e-mail: {str(e)}")
-        return f"Erro ao simular e-mail: {str(e)}"
+        return f"Erro ao simular e-mail: {str(e)}", 500
 
 @app.route('/login')
 def login():

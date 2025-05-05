@@ -8,7 +8,7 @@ Conta Outlook (opcional, para envio de e-mails reais)
 
 Configuração
 
-Clone o repositório:git clone https://github.com/seu-usuario/EduPhish.git
+Clone o repositório:git clone https://github.com/0x6a03448f4d/EduPhish.git
 cd EduPhish/social_eng_mvp
 
 
@@ -20,9 +20,19 @@ Windows: venv\Scripts\activate
 Linux/Mac: source venv/bin/activate
 
 
+Instale as dependências:pip install -r requirements.txt
+
+
 Execute o servidor:python phishing_mvp.py
 
 
+
+Configurando uma Conta Outlook para Envio Real
+
+Crie uma conta em https://outlook.live.com/.
+Acesse https://account.live.com/security e ative a verificação em duas etapas (se necessário).
+Gere uma senha de aplicativo em https://account.live.com/security (se a autenticação padrão falhar).
+Use o e-mail e a senha de aplicativo no formulário de campanha.
 
 Uso
 
@@ -34,13 +44,6 @@ Acesse http://127.0.0.1:5000/admin (usuário: admin, senha: admin123) para ver o
 Para visualizar dados no terminal, execute:python view_db.py
 
 
-
-Configurando uma Conta Outlook para Envio Real
-
-Crie uma conta em https://outlook.live.com/.
-Acesse https://account.live.com/security e ative a verificação em duas etapas (se necessário).
-Gere uma senha de aplicativo em https://account.live.com/security (se a autenticação padrão falhar).
-Use o e-mail e a senha de aplicativo no formulário de campanha.
 
 Estrutura
 
@@ -59,6 +62,9 @@ Erro 404 style.css: Confirme que static/style.css existe.
 Erro no envio de e-mails: Verifique as credenciais Outlook e autorize logins em https://account.live.com/security.
 Erro TemplateNotFound: Confirme que templates/campaign.html e templates/email.html existem.
 Dashboard vazio: Execute python view_db.py para verificar os dados.
+Erro 404 em /campaing: Use /campaign (corrigido com redirecionamento).
 
 Notas Éticas
 Este é um projeto educacional. Obtenha consentimento dos funcionários antes de realizar testes. Informe que se trata de uma simulação educacional.
+Contribuição
+Contribuições são bem-vindas! Envie pull requests ou abra issues em https://github.com/0x6a03448f4d/EduPhish.

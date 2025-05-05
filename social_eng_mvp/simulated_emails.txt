@@ -66,3 +66,20 @@ Conte�do:
 </body>
 </html>
 ---
+Para: dawdskoi@gmail.com
+Assunto: Atualize sua conta agora!
+Link: http://127.0.0.1:5000/login?user_id=5f530c3c-733b-4d3b-bf28-37fc70dd5fb8
+Conte�do:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atualize sua conta</title>
+</head>
+<body>
+    <h2>Atualização de Conta Necessária</h2>
+    <p>Por favor, atualize suas credenciais do Office 365 clicando no link abaixo:</p>
+    <p><a href="http://127.0.0.1:5000/login?user_id=5f530c3c-733b-4d3b-bf28-37fc70dd5fb8">Atualizar Agora</a></p>
+    <p>Se você não solicitou esta ação, ignore este e-mail.</p>
+</body>
+</html>
+---
